@@ -36,9 +36,9 @@
   top: 0;
   bottom: 0;
   right: 0;
-  width: 43%;
+  width: 44.5%;
   overflow: hidden;
-  clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(18.5% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 /* Ken Burns entrance */
