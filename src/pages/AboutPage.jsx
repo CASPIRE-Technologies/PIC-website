@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
+import aboutHeroPhoto1 from '../assets/contact-engineers.jpg';
+import aboutHeroPhoto2 from '../assets/services-hero.jpg';
 import { HiArrowRight } from 'react-icons/hi';
 import {
   HiOutlineRocketLaunch,
@@ -132,14 +134,31 @@ const AboutPage = () => {
     <div className="about-page">
       {/* ── Hero ── */}
       <section className="about-hero">
-        <img
-          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80"
-          alt="PIC engineering team"
-          className="about-hero-bg"
-        />
+        {/* Two-photo background: diagonal split */}
+        <div className="about-hero-photos">
+          <div className="about-hero-photo-main">
+            <img
+              src={aboutHeroPhoto1}
+              alt="PIC engineers in the field"
+              className="about-hero-img"
+            />
+          </div>
+          <div className="about-hero-photo-secondary">
+            <img
+              src={aboutHeroPhoto2}
+              alt="Power infrastructure site"
+              className="about-hero-img"
+            />
+            <div className="about-hero-badge-overlay">
+              PEOPLE&nbsp;|&nbsp;EXPERTISE&nbsp;|&nbsp;A STRONGER TOMORROW
+            </div>
+          </div>
+        </div>
+        {/* Dark gradient for text legibility */}
         <div className="about-hero-overlay" />
+        {/* Original text — overlaid at bottom-left */}
         <div className="container about-hero-content">
-          <h1 className="about-hero-title">About PIC</h1>
+          <h1 className="about-hero-title">About Us</h1>
           <p className="about-hero-subtitle">
             Independent engineering expertise<br />
             for dependable power infrastructure.
@@ -172,7 +191,7 @@ const AboutPage = () => {
           </div>
           <div className="about-engineering-image">
             <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+              src={aboutHeroPhoto2}
               alt="Engineering team reviewing plans"
               loading="lazy"
             />

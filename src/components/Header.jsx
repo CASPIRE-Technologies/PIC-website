@@ -90,10 +90,20 @@ const Header = () => {
     <header className={`header${scrolled ? ' scrolled' : ''}`} id="header">
       <div className="header-inner">
         <Link to="/" className="logo" aria-label="PIC Home">
-          <PicLogo size={48} />
-          <div className="logo-text">
-            <span className="logo-title">PIC</span>
-            <span className="logo-subtitle">Power Infrastructure<br />Consultants (PVT) LTD</span>
+          <div className="logo-brand">
+            <div className="logo-main-row">
+              <div className="logo-icon-wrap">
+                <PicLogo className="logo-icon" />
+              </div>
+              <span className="logo-title">
+                <span className="logo-title-pi">PI</span>
+                <span className="logo-title-c">C</span>
+              </span>
+            </div>
+            <div className="logo-sub-block">
+              <span className="logo-sub-main">POWER INFRASTRUCTURE</span>
+              <span className="logo-sub-tag">CONSULTANTS (PVT) LTD</span>
+            </div>
           </div>
         </Link>
 

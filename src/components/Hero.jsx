@@ -4,13 +4,11 @@ import heroBg from '../assets/hero-bg.jpg';
 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
-      <img
-        src={heroBg}
-        alt="Power transmission infrastructure"
-        className="hero-bg"
-      />
-      <div className="hero-overlay" />
+    <section
+      className="hero"
+      id="home"
+      style={{ backgroundImage: `url(${heroBg})` }}
+    >
       <div className="container">
         <div className="hero-content">
           <h1 className="hero-title">

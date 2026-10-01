@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './ContactPage.css';
-import contactHeroImg from '../assets/contact-hero.jpg';
+import contactHeroImg from '../assets/services-substation.jpg';
 import contactEngineersImg from '../assets/contact-engineers.jpg';
 import {
   HiOutlineEnvelope,
@@ -67,7 +67,6 @@ const ContactPage = () => {
           alt="Power transmission line in mountains"
           className="contact-hero-bg"
         />
-        <div className="contact-hero-overlay" />
         <div className="container contact-hero-container">
           <div className="contact-hero-content">
             <h1 className="contact-hero-title">Contact Us</h1>

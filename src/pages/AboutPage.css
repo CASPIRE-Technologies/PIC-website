@@ -5,54 +5,132 @@
 /* ── Hero ── */
 .about-hero {
   position: relative;
-  min-height: 340px;
+  min-height: 420px;
   display: flex;
   align-items: flex-end;
   margin-top: var(--header-height);
   overflow: hidden;
-  background: #0a2a4a;
+  background: #071e3d;
 }
 
-.about-hero-bg {
+/* Wrapper that fills the section */
+.about-hero-photos {
   position: absolute;
   inset: 0;
+}
+
+/* Left photo — independent 63%-wide panel with diagonal right edge */
+.about-hero-photo-main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 63%;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 87% 100%, 0 100%);
+}
+
+/* Right photo — independent 43%-wide panel with diagonal left edge */
+.about-hero-photo-secondary {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 43%;
+  overflow: hidden;
+  clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Ken Burns entrance */
+@keyframes aboutImgReveal {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.00); }
+}
+
+.about-hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.6;
+  display: block;
+  animation: aboutImgReveal 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.about-hero-photo-main .about-hero-img {
+  object-position: center 30%;
+}
+
+.about-hero-photo-secondary .about-hero-img {
+  object-position: center 30%;
+}
+
+/* Hover: gentle zoom */
+.about-hero-photo-main:hover .about-hero-img,
+.about-hero-photo-secondary:hover .about-hero-img {
+  transform: scale(1.04);
+}
+
+/* Dual-layer overlay: left-side darkening + bottom-up for text legibility */
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 30, 80, 0.80) 0%,
-    rgba(0, 50, 120, 0.55) 50%,
-    rgba(0, 80, 160, 0.30) 100%
-  );
+  z-index: 1;
+  background:
+    linear-gradient(
+      to right,
+      rgba(3, 15, 45, 0.65) 0%,
+      rgba(3, 15, 45, 0.22) 55%,
+      rgba(3, 15, 45, 0.04) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(3, 15, 45, 0.90) 0%,
+      rgba(3, 15, 45, 0.42) 38%,
+      rgba(3, 15, 45, 0.08) 100%
+    );
 }
 
+/* Glassmorphism badge at the bottom of the secondary panel */
+.about-hero-badge-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 16px;
+  background: rgba(2, 12, 38, 0.92);
+  border-top: 1px solid rgba(77, 184, 255, 0.18);
+  color: rgba(255, 255, 255, 0.80);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Text — overlaid at the bottom-left */
 .about-hero-content {
   position: relative;
   z-index: 2;
-  padding: 60px 24px 48px;
+  padding: 64px 24px 52px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.60), 0 1px 5px rgba(0, 0, 0, 0.45);
 }
 
 .about-hero-title {
-  font-size: 44px;
+  font-size: 46px;
   font-weight: 800;
   color: var(--white);
   margin-bottom: 12px;
-  line-height: 1.1;
+  line-height: 1.08;
+  letter-spacing: -0.4px;
 }
 
 .about-hero-subtitle {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-  max-width: 400px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.62;
+  max-width: 420px;
 }
 
 /* ── Engineering section ── */
@@ -528,7 +606,7 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    min-height: 260px;
+    min-height: 300px;
   }
 
   .about-hero-title {
@@ -536,7 +614,7 @@
   }
 
   .about-hero-content {
-    padding: 40px 24px 36px;
+    padding: 44px 20px 40px;
   }
 
   .about-purpose-grid {

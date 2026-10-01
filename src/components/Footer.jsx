@@ -22,10 +22,20 @@ const Footer = () => {
       <div className="container">
         <div className="footer-inner">
           <Link to="/" className="footer-logo" aria-label="PIC Home">
-            <PicLogo size={40} />
-            <div className="logo-text">
-              <span className="logo-title" style={{ fontSize: 22 }}>PIC</span>
-              <span className="logo-subtitle">Power Infrastructure<br />Consultants (PVT) LTD</span>
+            <div className="logo-brand">
+              <div className="logo-main-row">
+                <div className="logo-icon-wrap" style={{ width: 34, height: 30 }}>
+                  <PicLogo className="logo-icon" />
+                </div>
+                <span className="logo-title" style={{ fontSize: 26 }}>
+                  <span className="logo-title-pi">PI</span>
+                  <span className="logo-title-c">C</span>
+                </span>
+              </div>
+              <div className="logo-sub-block">
+                <span className="logo-sub-main" style={{ fontSize: '7.5px' }}>POWER INFRASTRUCTURE</span>
+                <span className="logo-sub-tag" style={{ fontSize: '6.5px' }}>CONSULTANTS (PVT) LTD</span>
+              </div>
             </div>
           </Link>
 

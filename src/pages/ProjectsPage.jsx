@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
+import projectsHeroImg from '../assets/projects-hero.jpg';
 import contactHeroImg from '../assets/contact-hero.jpg';
 import servicesSubstationImg from '../assets/services-substation.jpg';
 import projectRenewableImg from '../assets/project-renewable.jpg';
@@ -210,11 +211,10 @@ const ProjectsPage = () => {
       {/* ── Hero ── */}
       <section className="projects-hero">
         <img
-          src={contactHeroImg}
-          alt="Power transmission lines over mountains"
+          src={projectsHeroImg}
+          alt="PIC engineering team reviewing power infrastructure project blueprints"
           className="projects-hero-bg"
         />
-        <div className="projects-hero-overlay" />
         <div className="container projects-hero-container">
           <div className="projects-hero-content">
             <span className="projects-hero-badge">PROVEN TRACK RECORD</span>
