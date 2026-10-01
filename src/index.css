@@ -432,7 +432,6 @@ ol {
 /* ===== Hero Section ===== */
 .hero {
   position: relative;
-  min-height: 520px;
   display: flex;
   align-items: center;
   margin-top: var(--header-height);

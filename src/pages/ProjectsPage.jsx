@@ -210,11 +210,10 @@ const ProjectsPage = () => {
     <div className="projects-page">
       {/* ── Hero ── */}
       <section className="projects-hero">
-        <img
-          src={projectsHeroImg}
-          alt="PIC engineering team reviewing power infrastructure project blueprints"
+        <section
+          style={{ backgroundImage: `url(${projectsHeroImg})` }}
           className="projects-hero-bg"
-        />
+        ></section>
         <div className="container projects-hero-container">
           <div className="projects-hero-content">
             <span className="projects-hero-badge">PROVEN TRACK RECORD</span>
